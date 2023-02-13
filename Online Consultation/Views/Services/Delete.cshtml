@@ -1,0 +1,56 @@
+﻿@using Online_Consultation
+@model Online_Consultation.Models.Service
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<div class="row">
+    <h2 style="color:mediumpurple">
+        Edit A Service
+    </h2>
+    <form asp-action="Delete" method="post" enctype="multipart/form-data">
+    <div class="p-4 rounded border row">
+        <div asp-validation-summary="ModelOnly" class="text-danger">
+
+        </div>
+        <div class="col-8">
+             <div class="form-group row">
+            <div class="col-6">
+                <label asp-for="name"></label>
+            </div>
+            <div class="col-6">
+                <input asp-for="name" readonly="readonly" class="form-control" id="validationCustom05" required/>
+            </div>
+            <span asp-validation-for="name" class="text-danger"></span>
+            </div>
+           
+            
+            <br />
+             <div class="form-group row">
+             <div class="col-6">
+                <label asp-for="serviceDetail"></label>
+            </div>
+           
+            <div class="col-6">
+                <input asp-for="serviceDetail" readonly="readonly" class="form-control"  id="validationCustom05" required/>
+            </div>
+            <span asp-validation-for="serviceDetail" class="text-danger"></span>
+           
+            </div>
+             <br />
+            
+            
+            
+           
+        <div class="form-group">
+            <input class="btn btn-danger" value="Delete" type="submit"/>
+            <a asp-action="Index" class="btn btn-success"> Back to List</a>
+        </div>
+        </div>
+        
+
+       
+    </div>
+</form>
+</div>
+

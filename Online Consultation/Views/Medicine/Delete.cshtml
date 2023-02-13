@@ -1,0 +1,73 @@
+﻿@using Online_Consultation
+@model Online_Consultation.Models.Medicine
+@{
+    ViewData["Title"] = "Delete";
+}
+<div class="row">
+    <h2 style="color:mediumpurple">
+        Delete a Medicine
+    </h2>
+    <form asp-action="Delete" method="post" enctype="multipart/form-data">
+    <div class="p-4 rounded border row">
+        <div asp-validation-summary="ModelOnly" class="text-danger">
+
+        </div>
+        <div class="col-8">
+             <div class="form-group row">
+            <div class="col-6">
+                <label asp-for="mname"></label>
+            </div>
+            <div class="col-6">
+                <input asp-for="mname" readonly="readonly" class="form-control" id="validationCustom05" required/>
+            </div>
+            </div>
+            <div class="form-group row">
+            <span asp-validation-for="mname" class="text-danger"></span>
+            <br />
+             <div class="col-6">
+                <label asp-for="mprice"></label>
+            </div>
+            <div class="col-6">
+                <input asp-for="mprice" readonly="readonly" class="form-control"  id="validationCustom05" required/>
+            </div>
+            <span asp-validation-for="mprice" class="text-danger"></span>
+            <br />
+            </div>
+            <div class="form-group row">
+            <div class="col-6">
+                <label asp-for="mfg"></label>
+            </div>
+            <div class="col-6">
+                <input asp-for="mfg" readonly="readonly" class="form-control"  id="validationCustom05" required/>
+            </div>
+            <span asp-validation-for="mfg" class="text-danger"></span>
+            <br />
+            </div>
+            <div class="form-group row">
+            <div class="col-6">
+                <label asp-for="exp"> </label>
+            </div>
+            <div class="col-6">
+                <input asp-for="exp" disabled readonly="readonly" class="form-control" type="file">
+            </div>
+            <span asp-validation-for="exp" class="text-danger"></span>
+            <br />
+            </div>
+            <d
+            <br />
+        </div>
+        <div class="form-group">
+            <input class="btn btn-danger" value="Delete" type="submit"/>
+            <a asp-action="Index" class="btn btn-success"> Back to List</a>
+        </div>
+         <div class="col-1">
+
+        </div>
+       
+
+       
+    </div>
+</form>
+</div>
+
+

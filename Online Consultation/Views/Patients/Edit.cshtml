@@ -1,0 +1,89 @@
+﻿@using Online_Consultation
+@model Online_Consultation.Models.PatientProfile
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="row">
+    <h2 style="color:mediumpurple">
+        Edit A Patient
+    </h2>
+    <form asp-action="Edit" method="post" enctype="multipart/form-data">
+    <div class="p-4 rounded border row">
+        <div asp-validation-summary="ModelOnly" class="text-danger">
+
+        </div>
+        <div class="col-8">
+             <div class="form-group row">
+            <div class="col-2">
+                <label asp-for="pname"></label>
+            </div>
+            <div class="col-5">
+                <input asp-for="pname" class="form-control" id="validationCustom05" required/>
+            </div>
+             <span asp-validation-for="pname" class="text-danger"></span>
+            </div>
+
+             <div class="form-group row">
+            <div class="col-2">
+                <label asp-for="address"></label>
+            </div>
+            <div class="col-5">
+                <input asp-for="address" class="form-control" id="validationCustom05" required/>
+            </div>
+            <span asp-validation-for="address" class="text-danger"></span>
+             <input type="hidden" asp-for="pImageUrl" hidden/>
+            </div>
+            
+           
+            
+            <div class="form-group row">
+            <div class="col-2">
+                <label asp-for="Email"></label>
+            </div>
+            <div class="col-5">
+                <input asp-for="Email" class="form-control" id="validationCustom05" required/>
+            </div>
+            <span asp-validation-for="Email" class="text-danger"></span>
+            
+            </div>
+            
+            
+            <div class="form-group row">
+            <div class="col-2">
+                <label asp-for="pImage"> </label>
+            </div>
+            <div class="col-5">
+                <input asp-for="pImage" class="form-control" type="file">
+            </div>
+            <span asp-validation-for="pImage" class="text-danger"></span>
+            </div>
+            
+            
+            <div class="form-group row">
+            <div class="col-2">
+                <label asp-for="Mobile"></label>
+            </div>
+            <div class="col-5">
+                <input asp-for="Mobile" class="form-control" id="validationCustom05" required/>
+            </div>
+            <span asp-validation-for="Mobile" class="text-danger"></span>
+            </div>
+            
+        <div class="form-group">
+            <input class="btn btn-primary" value="Update" type="submit"/>
+            <a asp-action="PatientProfile" class="btn btn-success"> Back to List</a>
+        </div>
+        </div>
+         <div class="col-1">
+
+        </div>
+         <div class="col-3">
+             <img src="~/@Model.pImageUrl" width="100%"/>
+        </div>
+
+       
+    </div>
+</form>
+</div>
+

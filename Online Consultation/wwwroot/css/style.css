@@ -1,0 +1,213 @@
+﻿* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-size: 16px;
+    line-height: 1.7;
+    font-weight: 400;
+    font-family: sans-serif;
+}
+
+.headingsection {
+    background-image: linear-gradient(rgba(41,166,249,0.8),rgba(8,65,151,0.8)),url(../img/doctor.jpg);
+    background-size: cover;
+    background-position: top;
+    position: relative;
+    height: 95vh;
+    clip-path: polygon(0 0,100% 0,100% 75vh,0 100%);
+}
+
+.centerbox {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+
+.headingmain {
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 100;
+}
+
+.headingbig {
+    letter-spacing: 30px;
+    font-size: 40px;
+    display: block;
+    animation-name: toleft;
+    animation-duration: 2s;
+}
+
+.headingsmall {
+    letter-spacing: 5px;
+    font-size: 13px;
+    display: block;
+    animation-name: toright;
+    animation-duration: 2s;
+    margin-bottom: 40px;
+}
+
+.btnn:link,
+.btnn:visited {
+    text-decoration: none;
+    padding: 10px 30px;
+    border-radius: 100px;
+    text-align: center;
+    display: inline-block;
+    transition: all .2s;
+}
+
+.btnn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.8);
+}
+
+.btnnwhite {
+    color: #7f7f7f;
+    background-color: #fff;
+}
+
+.btnnanim {
+    animation-name: toup;
+    animation-duration: 2s;
+    animation-delay: 3s;
+    animation-fill-mode: backwards;
+}
+
+@keyframes toup {
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+
+    80% {
+        transform: translateY(-100px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes toleft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+
+    80% {
+        transform: translateX(100px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes toright {
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+
+    80% {
+        transform: translateX(-100px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+/*-------------------   About Section -----------------------*/
+
+.seconndheading {
+    padding: 10rem 0;
+    background-color: #d7d2d2;
+    margin-top: -20vh;
+    text-align: center;
+}
+
+.headingabout {
+    background-image: linear-gradient(rgba(41,166,249,0.8),rgba(8,65,151,0.8));
+    -webkit-background-clip: text;
+    color: transparent;
+    font-size: 30px;
+    text-transform: uppercase;
+    animation-name: toleft;
+    animation-duration: 2s;
+    transition: all .2s;
+    margin-bottom: 40px;
+}
+
+    .headingabout:hover {
+        transform: skewY(3deg) skewX(15deg) scale(1.1);
+    }
+
+.headingterinary {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: rgb(69, 66, 66);
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.para {
+    font-size: 1.0rem;
+    color: #777;
+    text-align: center;
+}
+
+/*--------------- About Image section--------------------------*/
+
+.imgcomposition {
+    position: relative;
+    margin: 0px;
+}
+
+.composition-photo {
+    width: 55%;
+    box-shadow: 0 1.5rem 4rem rgba(8,65,151,0.4);
+    position: absolute;
+    z-index: 10;
+}
+
+.composition-photo-p1 {
+    left: 0;
+    top: 0;
+}
+
+.composition-photo-p2 {
+    right: 10px;
+    top: 2rem;
+}
+
+.composition-photo-p3 {
+    left: 20%;
+    top: 10rem
+}
+
+.composition-photo-p1:hover {
+    transform: scale(1.1);
+    z-index: 20;
+}
+
+.composition-photo-p2:hover {
+    transform: scale(1.1);
+    z-index: 20;
+}
+
+.composition-photo-p3:hover {
+    transform: scale(1.1);
+    z-index: 20;
+}
+
+.composition-photo:hover {
+    outline: 1.5rem solid rgb(41,166,249);
+}

@@ -1,0 +1,64 @@
+﻿@using Online_Consultation
+@model IEnumerable<Online_Consultation.Models.Medicine>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="row">
+    <div class="col-6">
+        <h2 style="color:#6f42c1"> 
+            Medicine List
+        </h2>
+    </div>
+     <div class="col-6 text-end">
+        <a asp-action="Create" class="btn" style="background-color:#6f42c1;color:white"> &nbsp; Add Medicine</a>
+    </div>
+
+    <br />
+    <br />
+    <div class="col-lg-12 col-md-6">
+      <table class=" container table table-striped">
+      <tr>
+        <th>
+            @Html.DisplayNameFor(c => c.mname)
+        </th>
+         <th>
+            @Html.DisplayNameFor(c => c.mprice)
+        </th>
+         <th>
+            @Html.DisplayNameFor(c => c.mfg)
+        </th>
+         <th>
+            @Html.DisplayNameFor(c => c.exp)
+        </th>
+        <th></th>
+      </tr>
+      @foreach(var item in Model)
+      {
+      <tr>
+          <td>
+              @item.mname
+          </td>
+          <td>
+              @item.mprice
+          </td>
+          <td>
+              @item.mfg
+          </td>
+          <td>
+              @item.exp
+          </td>
+          
+          <td>
+       <div class="btn-group" role="group">
+  <a asp-action="Edit" asp-controller="Medicine" class="btn btn-success" asp-route-id="@item.id" > Edit  </a>
+  <a class="btn btn-warning" asp-action="Details" asp-controller="Medicine" asp-route-id="@item.id">Details</a>
+  <a class="btn btn-danger" asp-action="Delete" asp-controller="Medicine" asp-route-id="@item.id"> Delete </a>
+</div>
+</td>
+</tr>
+      }
+      </table>
+      </div>
+    </div>
+

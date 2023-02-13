@@ -1,0 +1,109 @@
+﻿@model Online_Consultation.Models.Billing
+@using Online_Consultation.Models
+@{
+    ViewData["Title"] = "Success";
+}
+
+<h6 class="text-center text-success">Successfully paid amount your google link is generated below go and wait for doctor he will come in next 5 mins</h6>
+
+<div class="row">
+    <h2 style="color:mediumpurple">
+        Bill details
+    </h2>
+    <form asp-action="Success" method="post" enctype="multipart/form-data">
+    <div class="p-4 rounded border row">
+        <div asp-validation-summary="ModelOnly" class="text-danger">
+
+        </div>
+        <div class="col-8">
+             <div class="form-group row">
+            <div class="col-6">
+                <label asp-for="doctor.Docname"></label>
+            </div>
+            <input asp-for="id" hidden/>
+            <input asp-for="did" hidden/>
+            <input asp-for="pid" hidden/>
+            <div class="col-6">
+                <input asp-for="doctor.Docname" readonly="readonly" class="form-control" id="validationCustom05" required/>
+            </div>
+            </div>
+            <div class="form-group row">
+            <span asp-validation-for="doctor.Docname" class="text-danger"></span>
+            <br />
+            <div class="col-6">
+                <label asp-for="patient.pname"></label>
+            </div>
+            <div class="col-6">
+                <input asp-for="patient.pname" readonly="readonly" class="form-control" id="validationCustom05" required/>
+            </div>
+            </div>
+            <div class="form-group row">
+            <span asp-validation-for="patient.pname" class="text-danger"></span>
+            <br />
+             <div class="col-6">
+                <label asp-for="doctor.speciality"></label>
+            </div>
+            <input asp-for = " doctor.docImageUrl" readonly="readonly" type="hidden"/>
+            <div class="col-6">
+                <input asp-for="doctor.speciality" readonly="readonly" class="form-control"  id="validationCustom05" required/>
+            </div>
+            <span asp-validation-for="doctor.speciality" class="text-danger"></span>
+            <br />
+            </div>
+            <div class="form-group row">
+            <div class="col-6">
+                <label > Doctor Email</label>
+            </div>
+            <div class="col-6">
+               <input asp-for="doctor.email" readonly="readonly" class="form-control"  id="validationCustom05" required/>
+            </div>
+            <span asp-validation-for="doctor.email" class="text-danger"></span>
+            <br />
+            </div>
+            <div class="form-group row">
+            <div class="col-6">
+                <label> Patient Email</label>
+            </div>
+            <div class="col-6">
+               <input asp-for="patient.Email" readonly="readonly" class="form-control"  id="validationCustom05" required/>
+            </div>
+            <span asp-validation-for="patient.Email" class="text-danger"></span>
+            <br />
+            </div>
+            <div class="form-group row">
+            <div class="col-6">
+                <label asp-for="doctor.fees"></label>
+            </div>
+            <div class="col-6">
+                <input asp-for="doctor.fees" readonly="readonly" class="form-control" id="validationCustom05" required/>
+            </div>
+            <span asp-validation-for="doctor.fees" class="text-danger"></span>
+            <br />
+            </div>
+            <div class="form-group row">
+             <div class="col-6">
+                <label> Slots</label>
+            </div>
+            <div class="col-6">
+                <input asp-for="doctor.avail"disabled hidden/>
+                <span style="color:green">
+                    Slot booked successfully
+                </span>
+            </div>
+            <span asp-validation-for="doctor.avail" class="text-danger"></span>
+            <br />
+        </div>
+        <div class="form-group">
+            <a class="btn btn-primary" asp-action="Billing" asp-route-id="@Model.doctor.id">Click to view glink  </a>
+        </div>
+        </div>
+         <div class="col-1">
+
+        </div>
+         <div class="col-3">
+             <img src="~/@Model.doctor.docImageUrl" width="100%"/>
+        </div>
+        </div> 
+</form>
+</div>
+

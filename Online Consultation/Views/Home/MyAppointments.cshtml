@@ -1,0 +1,71 @@
+﻿@using Online_Consultation
+@model  IEnumerable<Online_Consultation.Models.Billing>
+@{
+    ViewData["Title"] = "MyAppointments";
+}
+
+<h1>MyAppointments</h1>
+
+<head>
+    <link rel="stylesheet" href="~/css/Home.css"/>
+</head>
+<div>
+</div>
+<div class="row cart">
+    <table class="col-12"> 
+        <tr>
+            <th>
+                Doctor 
+            </th>
+            <th>
+                Doctor name
+            </th>
+            <th>
+                patient 
+            </th>
+            <th>
+                Total fee
+            </th>
+            <th>
+                date taken appointment
+            </th>
+            <th>
+                Chat
+            </th>
+            <th>
+                Feedback
+            </th>
+        </tr>
+        @foreach(var p in Model)
+        {
+            <tr>
+            <td>
+                <div class="cart-in">
+                    <img class="rounded-circle" src="~/@p.doctor.docImageUrl" height="160px" width="150px"/>
+                    <br/>
+                    <!-- <h5 class="text-right" style="color:#fb3531">/-</h5> -->
+                </div>
+            </td>
+            <td>
+                <h5 class="text-right d-inline">@p.doctor.Docname</h5>
+            </td>
+            <td>
+                <input asp-for="@p.patient.pname" readonly="readonly"/>
+            </td>
+            <td>
+                @p.totalFee
+            </td>
+            <td>
+                @p.billingdate
+            </td>
+            <td>
+                <a asp-action="Index" asp-controller="Home" asp-route-id="@p.doctor.id,@p.patient.id"> Get Appointment</a>
+            </td>
+            <td>
+                 <a class="btn btn-success"> Give feedback</a>
+            </td>
+        </tr>
+        }
+    </table>
+</div>
+

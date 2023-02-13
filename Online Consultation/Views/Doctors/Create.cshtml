@@ -1,0 +1,84 @@
+﻿@using Online_Consultation
+@model Online_Consultation.Models.DoctorProfile
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="row">
+    <h2 style="color:mediumpurple">
+        Add a Doctor
+    </h2>
+    <form asp-action="Create" method="post" enctype="multipart/form-data">
+    <div class="p-4 rounded border">
+        <div asp-validation-summary="ModelOnly" class="text-danger">
+
+        </div>
+
+        <div class="form-group row">
+            <div class=",col-2">
+                <label asp-for="Docname"></label>
+            </div>
+            <div class="col-5">
+                <input asp-for="Docname" class="form-control" id="validationCustom05" required/>
+                <div class="invalid-feedback">
+                    Please give input
+                </div>
+            </div>
+            <span asp-validation-for="Docname" class="text-danger"></span>
+             <div class=",col-2">
+                <label asp-for="speciality"></label>
+            </div>
+            <div class="col-5">
+                <input asp-for="speciality" class="form-control" id="validationCustom05" required/>
+                <div class="invalid-feedback">
+                    Please give input
+                </div>
+            </div>
+            <span asp-validation-for="speciality" class="text-danger"></span>
+            <div class=",col-2">
+                <label asp-for="email"></label>
+            </div>
+            <div class="col-5">
+                 <input asp-for="email" class="form-control" id="validationCustom05" required/>
+                <div class="invalid-feedback">
+                    Please give input
+                </div>
+            </div>
+            <span asp-validation-for="email" class="text-danger"></span>
+            <div class=",col-2">
+                <label asp-for="dImage"> </label>
+            </div>
+            <div class="col-5">
+                <input asp-for="dImage" class="form-control" type="file" id="validationCustom05" required>
+                <div class="invalid-feedback">
+                    Please give input
+                </div>
+            </div>
+            <span asp-validation-for="dImage" class="text-danger"></span>
+            <div class=",col-2">
+                <label asp-for="fees"></label>
+            </div>
+            <div class="col-5">
+                <input asp-for="fees" class="form-control" id="validationCustom05" required/>
+                <div class="invalid-feedback">
+                    Please give input
+                </div>
+            </div>
+            <span asp-validation-for="fees" class="text-danger"></span>
+             <div class=",col-2">
+                <label asp-for="avail"></label>
+            </div>
+            <div class="col-5">
+                <input asp-for="avail" type="checkbox"/>
+            </div>
+            <span asp-validation-for="avail" class="text-danger"></span>
+        </div>
+        <br />
+        <div class="form-group">
+            <input class="btn btn-primary" value="save" type="submit"/>
+            <a asp-action="DoctorProfile" asp-controller="Doctors" class="btn btn-success"> Back to List</a>
+        </div>
+    </div>
+</form>
+</div>
+

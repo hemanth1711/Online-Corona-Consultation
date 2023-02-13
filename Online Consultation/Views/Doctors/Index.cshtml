@@ -1,0 +1,82 @@
+﻿@using Online_Consultation
+@model IEnumerable<Online_Consultation.Models.DoctorProfile>
+@{
+    ViewData["Title"] = "Index";
+}
+<!--
+
+ var user = _usermanager.FindByEmail(model.Email);
+ var role = _usermanager.GetRoles(user);
+-->
+<head>
+    <link rel="stylesheet" href="~/css/Home.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<div>
+  <h1 class="text-center">
+        All Doctors
+    </h1>
+</div>
+<br />
+<br />
+<form>
+<div class="row">
+    @foreach(var item in Model)
+    {
+    <div class="col-md-4">
+        <div class="card mt-3 h-100">
+            <div class="align-items-center p-2 text-center">
+                <img src="~/@item.docImageUrl" id="img_jq" class="rounded" height="160px"/>
+                <h5 id="pname">
+                    @item.Docname
+                </h5>
+                <div class="mt-3 info">
+                    <span class="d-block" id="pdesc">
+                       speciality: @item.speciality
+                    </span>
+                </div>
+                 <div class="mt-3 info">
+                    <span class="d-block" id="pdesc">
+                       rating: 4.0
+                    </span>
+                </div>
+                <div class="mt-3 text-dark cost-bg">
+                    <span id="pprice">
+                       Fee:Rs. @item.fees /-
+                    </span>
+                </div>
+                <div class="mt-3 text-dark">
+                    @if(item.avail.ToUpper()=="TRUE")
+                            {
+                                <span style="color:green">
+                                Available
+                                </span>
+                            }
+                     @if(item.avail.ToUpper()=="FALSE")
+                            {
+                                <span style="color:red">
+                                Slots Not Available
+                                </span>
+                            }
+                            
+                    
+                </div>
+                <div class="p-3 text-center text-white mt-3 cursor shoe-bg">
+                    <!--<input class="btn btn-primary" value="getAppointment Now" type="submit"/> -->
+                    @if(item.avail.ToUpper()=="TRUE")
+                            {
+                                <a asp-action="getAppointment" asp-controller="Home" asp-route-id="@item.id"> Get Appointment</a>
+                            }
+                    @if(item.avail.ToUpper()=="FALSE")
+                            {
+                                <a class="disabled" style="color:#777;"> Get Appointment</a>
+                            }
+                        </div>
+            </div>
+        </div>
+    </div>
+    }
+</div>
+</form>
+
